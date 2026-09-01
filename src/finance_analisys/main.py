@@ -1,4 +1,5 @@
 import datetime
+import re
 import threading
 import boto3
 import customtkinter as ctk
@@ -134,6 +135,21 @@ class InteractiveAWSApp(ctk.CTk):
 
         self.chat_history = ctk.CTkTextbox(self.main_frame)
         self.chat_history.pack(padx=20, pady=10, fill="both", expand=True)
+
+        # Configure Tkinter tags to properly format Markdown elements in CTkTextbox
+        self.chat_history._textbox.tag_config(
+            "bold", font=("Segoe UI", 12, "bold")
+        )
+        self.chat_history._textbox.tag_config(
+            "header", font=("Segoe UI", 14, "bold")
+        )
+        self.chat_history._textbox.tag_config(
+            "code",
+            font=("Consolas", 11),
+            background="#2b2b2b",
+            foreground="#dcdcdc",
+        )
+
         self.chat_history.insert(
             "1.0",
             "Welcome! Ask any live question regarding costs, users, or infrastructure.\n\n",
@@ -158,8 +174,8 @@ class InteractiveAWSApp(ctk.CTk):
         if not query:
             return
 
-        self.chat_history.insert("end", f"\nManagement: {query}\n")
-        self.chat_history.insert("end", "\nOllama AI: Thinking...\n")
+        self.chat_history.insert("end", f"Management: {query}\n\n")
+        self.chat_history.insert("end", "Ollama AI: Thinking...\n\n")
         self.chat_history.see("end")
         self.entry_prompt.delete(0, "end")
         self.btn_ask.configure(state="disabled")
@@ -173,7 +189,8 @@ class InteractiveAWSApp(ctk.CTk):
         system_context = (
             "You are an AWS Cloud Cost & Infrastructure Management AI Assistant.\n"
             "Use the provided AWS Telemetry Data to accurately answer the user's question.\n"
-            "If exact data is missing from the metrics, provide standard AWS operational advice.\n\n"
+            "If exact data is missing from the metrics, provide standard AWS operational advice.\n"
+            "Format your response using clear Markdown (headers, bullet points, bold text).\n\n"
             f"AWS Telemetry Data:\n"
             f"- Cost Data: {cost_data}\n"
             f"- Security Findings: {sec_data}\n"
@@ -190,11 +207,45 @@ class InteractiveAWSApp(ctk.CTk):
         self.after(0, self._update_chat_ui, response_text)
 
     def _update_chat_ui(self, response_text):
-        # Remove 'Thinking...' placeholder line and append live response
-        self.chat_history.delete("end - 2 lines", "end")
-        self.chat_history.insert("end", f"\nOllama AI:\n{response_text}\n\n")
+        # Remove 'Thinking...' placeholder line and render formatted response
+        self.chat_history.delete("end - 3 lines", "end")
+        self.chat_history.insert("end", "Ollama AI:\n")
+        self._append_formatted_markdown(response_text)
+        self.chat_history.insert("end", "\n\n")
         self.chat_history.see("end")
         self.btn_ask.configure(state="normal")
+
+    def _append_formatted_markdown(self, text):
+        """Parse raw markdown strings into visual CTkTextbox tags."""
+        lines = text.split("\n")
+        in_code_block = False
+
+        for line in lines:
+            if line.startswith("```"):
+                in_code_block = not in_code_block
+                continue
+
+            if in_code_block:
+                self.chat_history.insert("end", f"  {line}\n", "code")
+                continue
+
+            # Handle headers (# Header)
+            if line.startswith("#"):
+                clean_line = re.sub(r"^#+\s*", "", line)
+                self.chat_history.insert("end", clean_line + "\n", "header")
+                continue
+
+            # Parse inline markdown elements (**bold** and `code`)
+            tokens = re.split(r"(\*\*.*?\*\*|`.*?`)", line)
+            for token in tokens:
+                if token.startswith("**") and token.endswith("**"):
+                    self.chat_history.insert("end", token[2:-2], "bold")
+                elif token.startswith("`") and token.endswith("`"):
+                    self.chat_history.insert("end", f" {token[1:-1]} ", "code")
+                else:
+                    self.chat_history.insert("end", token)
+
+            self.chat_history.insert("end", "\n")
 
 
 if __name__ == "__main__":

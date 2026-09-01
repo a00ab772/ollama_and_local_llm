@@ -329,4 +329,7 @@ Sequence that you can use to test the same from your laptop:
     ```
     This will return information about the EC2 instance, including its status and configuration.
     
-    
+
+* Asking for security findings
+
+![security issue findings](images/security_issue_findings.png)
