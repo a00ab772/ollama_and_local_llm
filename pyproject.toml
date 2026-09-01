@@ -19,3 +19,6 @@ ollama-and-local-llm = "ollama_and_local_llm:main"
 [build-system]
 requires = ["uv_build>=0.12.0,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "src/finance_analisys"]
