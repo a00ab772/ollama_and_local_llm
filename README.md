@@ -105,6 +105,21 @@ In this implementation, Ollama acts as an executive cloud financial and security
 
 ## Pre-requisites
 
+* Python and [uv](https://docs.astral.sh/uv/):
+
+![environment variables](images/environment_variables.png)
+
+```shell
+user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
+Thu Aug 27 09:50:55
+$ python --version
+Python 3.14.6
+
+user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
+Thu Aug 27 10:33:58
+$ uv --version
+uv 0.12.0 (b88d7c5c4 2026-07-28 x86_64-pc-windows-msvc)
+```
 * Adding the required packages to the project:
 
 ```shell
