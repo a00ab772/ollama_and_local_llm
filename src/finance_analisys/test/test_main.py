@@ -1,7 +1,104 @@
 import datetime
+from unittest.mock import MagicMock, patch
 import boto3
 import customtkinter as ctk
 import ollama
+
+# --- Mock AWS Datasets ---
+MOCK_COST_RESPONSE = {
+    "ResultsByTime": [
+        {
+            "Groups": [
+                {
+                    "Keys": ["Amazon Elastic Compute Cloud - Compute"],
+                    "Metrics": {
+                        "UnblendedCost": {"Amount": "142.50", "Unit": "USD"}
+                    },
+                },
+                {
+                    "Keys": ["Amazon Relational Database Service"],
+                    "Metrics": {
+                        "UnblendedCost": {"Amount": "85.00", "Unit": "USD"}
+                    },
+                },
+                {
+                    "Keys": ["Amazon Simple Storage Service"],
+                    "Metrics": {
+                        "UnblendedCost": {"Amount": "12.10", "Unit": "USD"}
+                    },
+                },
+            ]
+        }
+    ]
+}
+
+MOCK_SECURITY_RESPONSE = {
+    "Findings": [
+        {
+            "Severity": {"Label": "CRITICAL"},
+            "Title": "S3 Bucket public read access in us-east-1",
+            "Resources": [{"Id": "arn:aws:s3:::prod-finance-bucket"}],
+        },
+        {
+            "Severity": {"Label": "HIGH"},
+            "Title": "Security Group allows unrestricted SSH (port 22) in eu-west-1",
+            "Resources": [{"Id": "sg-0123456789abcdef0"}],
+        },
+    ]
+}
+
+MOCK_CLOUDTRAIL_RESPONSE = {
+    "Events": [
+        {
+            "EventTime": "2026-08-28 14:22:10",
+            "EventName": "RunInstances",
+            "Username": "devops-admin-alex",
+            "Resources": [{"ResourceName": "i-0a1b2c3d4e5f6g7h8"}],
+        }
+    ]
+}
+
+
+def mock_boto3_client(service_name, *args, **kwargs):
+    if service_name == "ce":
+        mock_ce = MagicMock()
+        mock_ce.get_cost_and_usage.return_value = MOCK_COST_RESPONSE
+        return mock_ce
+    elif service_name == "securityhub":
+        mock_sh = MagicMock()
+        mock_sh.get_findings.return_value = MOCK_SECURITY_RESPONSE
+        return mock_sh
+    elif service_name == "cloudtrail":
+        mock_ct = MagicMock()
+        mock_ct.lookup_events.return_value = MOCK_CLOUDTRAIL_RESPONSE
+        return mock_ct
+    return MagicMock()
+
+
+def mock_ollama_interactive(model, prompt):
+    p = prompt.lower()
+
+    if any(k in p for k in ["who", "user", "person"]):
+        return {
+            "response": "The highest expense was incurred by IAM user 'devops-admin-alex' on Aug 28, 2026."
+        }
+    elif any(k in p for k in ["what", "action", "event", "increase", "did he do"]):
+        return {
+            "response": "User devops-admin-alex triggered a 'RunInstances' API call to launch a high-spec EC2 instance (c5.4xlarge)."
+        }
+    elif any(k in p for k in ["service", "services", "ec2", "rds", "s3"]):
+        return {
+            "response": "The main services used were Amazon EC2 ($142.50), Amazon RDS ($85.00), and Amazon S3 ($12.10)."
+        }
+    elif any(k in p for k in ["zone", "region"]):
+        return {
+            "response": "us-east-1 accounts for roughly 70% of total monthly spending."
+        }
+    else:
+        return {
+            "response": "Based on AWS telemetry: devops-admin-alex executed RunInstances on Aug 28, 2026, driving $142.50 in EC2 costs."
+        }
+
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
@@ -55,7 +152,6 @@ class InteractiveAWSApp(ctk.CTk):
             end_date = datetime.date.today()
             start_date = end_date - datetime.timedelta(days=30)
 
-            # Fetch Costs
             cost_res = ce_client.get_cost_and_usage(
                 TimePeriod={
                     "Start": start_date.strftime("%Y-%m-%d"),
@@ -66,12 +162,10 @@ class InteractiveAWSApp(ctk.CTk):
                 GroupBy=[{"Type": "DIMENSION", "Key": "SERVICE"}],
             )
 
-            # Fetch Findings
             sec_res = sh_client.get_findings(
                 Filters={"RecordState": [{"Value": "ACTIVE", "Comparison": "EQUALS"}]}
             )
 
-            # Fetch CloudTrail Events
             trail_res = ct_client.lookup_events(MaxResults=10)
 
             return cost_res, sec_res, trail_res
@@ -173,5 +267,8 @@ class InteractiveAWSApp(ctk.CTk):
 
 
 if __name__ == "__main__":
-    app = InteractiveAWSApp()
-    app.mainloop()
+    with patch("boto3.client", side_effect=mock_boto3_client), patch(
+        "ollama.generate", side_effect=mock_ollama_interactive
+    ):
+        app = InteractiveAWSApp()
+        app.mainloop()

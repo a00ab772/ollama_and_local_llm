@@ -1,0 +1,15 @@
+# Python and compiled code
+__pycache__/
+*.py
+*$py.class
+.venv/
+venv/
+ENV/
+uv.lock
+
+# PyCharm and IDE configurations
+.idea/
+
+# Operating system and others
+.DS_Store
+Thumbs.db

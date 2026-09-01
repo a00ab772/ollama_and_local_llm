@@ -129,3 +129,10 @@ Installed 14 packages in 662ms
  + werkzeug==3.1.8
  + xmltodict==1.0.4
 ```
+
+
+* Running the `test_main.py`
+
+![img.png](images/test_main_configuration.png)
+
+![test_main.py execution](images/test_main_execution.png)

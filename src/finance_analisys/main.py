@@ -75,7 +75,7 @@ class InteractiveAWSApp(ctk.CTk):
             trail_res = ct_client.lookup_events(MaxResults=10)
 
             return cost_res, sec_res, trail_res
-        except Exception as e:
+        except Exception:
             return None, None, None
 
     def setup_cost_view(self):
@@ -109,7 +109,7 @@ class InteractiveAWSApp(ctk.CTk):
             self.card_sec, text="Active Security Findings", font=ctk.CTkFont(size=12)
         ).pack(pady=2)
         ctk.CTkLabel(
-            self.card_sec, text="2", font=ctk.CTkFont(size=18, weight="bold")
+            self.card_sec, text="2", font=ctk.CTkFont(size=18, weight="bold"),
         ).pack(pady=5)
 
         self.cost_tb = ctk.CTkTextbox(self.main_frame, width=700, height=400)
@@ -167,7 +167,15 @@ class InteractiveAWSApp(ctk.CTk):
         self.chat_history.insert("end", f"\nManagement: {query}\n")
         self.entry_prompt.delete(0, "end")
 
-        res = ollama.generate(model="llama3.1", prompt=query)
+        context_prompt = (
+            "You are an AWS Cloud Cost & Infrastructure Management AI Assistant. "
+            "Answer questions strictly in the context of AWS Cloud infrastructure, "
+            "AWS services (EC2, RDS, S3), IAM users, and cloud spending/savings. "
+            "Do not talk about general history or non-AWS expenses.\n\n"
+            f"User Question: {query}"
+        )
+
+        res = ollama.generate(model="llama3.1", prompt=context_prompt)
         self.chat_history.insert("end", f"\nOllama AI:\n{res['response']}\n")
         self.chat_history.see("end")
 
