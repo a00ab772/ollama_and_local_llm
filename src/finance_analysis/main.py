@@ -81,6 +81,28 @@ class InteractiveAWSApp(ctk.CTk):
         for widget in self.main_frame.winfo_children():
             widget.destroy()
 
+        cost_data, sec_data, _ = self.fetch_aws_metrics()
+
+        # Parse costs dynamically
+        total_cost = 0.0
+        service_lines = []
+
+        if isinstance(cost_data, dict) and "ResultsByTime" in cost_data:
+            for result in cost_data["ResultsByTime"]:
+                for group in result.get("Groups", []):
+                    service_name = group["Keys"][0]
+                    amount = float(group["Metrics"]["UnblendedCost"]["Amount"])
+                    unit = group["Metrics"]["UnblendedCost"].get("Unit", "USD")
+                    total_cost += amount
+                    service_lines.append(f"- {service_name}: ${amount:.2f} {unit}")
+
+        total_cost_str = f"${total_cost:.2f} USD" if total_cost > 0 else "N/A"
+
+        # Parse active security findings dynamically
+        sec_count = 0
+        if isinstance(sec_data, dict) and "Findings" in sec_data:
+            sec_count = len(sec_data["Findings"])
+
         lbl = ctk.CTkLabel(
             self.main_frame,
             text="Executive Overview (Costs & Security)",
@@ -98,7 +120,7 @@ class InteractiveAWSApp(ctk.CTk):
         ).pack(pady=2)
         ctk.CTkLabel(
             self.card_total,
-            text="$239.60 USD",
+            text=total_cost_str,
             font=ctk.CTkFont(size=18, weight="bold"),
         ).pack(pady=5)
 
@@ -108,19 +130,18 @@ class InteractiveAWSApp(ctk.CTk):
             self.card_sec, text="Active Security Findings", font=ctk.CTkFont(size=12)
         ).pack(pady=2)
         ctk.CTkLabel(
-            self.card_sec, text="2", font=ctk.CTkFont(size=18, weight="bold")
+            self.card_sec, text=str(sec_count), font=ctk.CTkFont(size=18, weight="bold")
         ).pack(pady=5)
+
+        summary_body = "\n".join(service_lines) if service_lines else "No cost metrics available."
+        summary_text = (
+            f"Executive Summary:\n\n{summary_body}\n\n"
+            "Switch to 'Interactive Q&A' to ask about user attribution or specific expenses."
+        )
 
         self.cost_tb = ctk.CTkTextbox(self.main_frame, height=500)
         self.cost_tb.pack(padx=20, pady=10, fill="both", expand=True)
-        self.cost_tb.insert(
-            "1.0",
-            "Executive Summary:\n\n"
-            "- Amazon EC2: $142.50 USD\n"
-            "- Amazon RDS: $85.00 USD\n"
-            "- Amazon S3: $12.10 USD\n\n"
-            "Switch to 'Interactive Q&A' to ask about user attribution or specific expenses.",
-        )
+        self.cost_tb.insert("1.0", summary_text)
 
     def setup_chat_view(self):
         for widget in self.main_frame.winfo_children():
