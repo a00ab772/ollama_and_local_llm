@@ -1,4 +1,24 @@
+# Pre-requisites
+
+* Python and [uv](https://docs.astral.sh/uv/):
+
+![environment variables](images/environment_variables.png)
+
+```shell
+user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
+Thu Aug 27 09:50:55
+$ python --version
+Python 3.14.6
+
+user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
+Thu Aug 27 10:33:58
+$ uv --version
+uv 0.12.0 (b88d7c5c4 2026-07-28 x86_64-pc-windows-msvc)
+```
+
 # 006 LLM model and Streamlit
+
+I have followed a few udemy trainings up to certain point, for example this one:
 
 https://www.udemy.com/course/mastering-local-llms-with-ollama-and-python-doing-projects/learn/lecture/45142355#overview
 
@@ -96,30 +116,32 @@ NAME               ID              SIZE      MODIFIED
 llama3.1:latest    46e0c10c039e    4.9 GB    11 minutes ago
 ```
 
+My overall satisfaction about the Udemy trainings so far is poor, but probably I need to take more.
+
+I see more promising the Deeplearning.ai site, worth having a look.
 
 # Finance analysis
 
-Here is an example using CustomTkinter, Boto3, and Ollama.
+## General overview
 
-In this implementation, Ollama acts as an executive cloud financial and security analyst, parsing AWS cost and security metrics to generate C-level insights, KPI cards, and exportable CSV reports.
+This was basically build upon a question that was standing in mind since first day we met: "How can we build a tool that helps management to take decissions".
 
-## Pre-requisites
+I didn't find a single training that had the answer, what I was feeling is that all the trainings that I have followed was made asking questions to the chatgpt.
 
-* Python and [uv](https://docs.astral.sh/uv/):
+Then I said, ok, let me ask it the question to chatgpt,  "Please, prepare for me a main.py that that helps management to take decissions in AWS platforms about cost and risk, and give me a test_main.py that will mock aws outputs that we will use to feed the main.py reporting tool".
 
-![environment variables](images/environment_variables.png)
+And then this PoC came to us... sad, but true.
 
-```shell
-user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
-Thu Aug 27 09:50:55
-$ python --version
-Python 3.14.6
+It has been built using CustomTkinter, Boto3, and Ollama.
 
-user@DESKTOP-SCNMK3I MINGW64 ~/Documents/PycharmProjects/prueba_sgd_group
-Thu Aug 27 10:33:58
-$ uv --version
-uv 0.12.0 (b88d7c5c4 2026-07-28 x86_64-pc-windows-msvc)
-```
+Ollama acts as an executive cloud financial and security analyst, parsing AWS cost and security metrics to generate C-level insights, KPI cards, and exportable CSV reports.
+
+`run_interactive_mock.py` mocks the information retrieved from the AWS Cost Explorer (ce), Security Hub (securityhub) and CloudTrail services, and passes it to the `main.py`.
+
+This is the diagram of the architecture:
+
+![architecture.drawio.png](images/architecture.drawio.png)
+
 * Adding the required packages to the project:
 
 ```shell
