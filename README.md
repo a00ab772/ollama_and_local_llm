@@ -333,3 +333,5 @@ Sequence that you can use to test the same from your laptop:
 * Asking for security findings
 
 ![security issue findings](images/security_issue_findings.png)
+
+![img.png](img.png)
