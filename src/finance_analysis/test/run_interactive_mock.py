@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
-# Add parent directory (src/finance_analisys) containing main.py to sys.path
+# Add parent directory (src/finance_analysis) containing main.py to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from main import InteractiveAWSApp
