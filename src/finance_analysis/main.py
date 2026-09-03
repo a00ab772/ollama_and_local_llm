@@ -9,6 +9,13 @@ ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
 
 
+def format_currency(value: float) -> str:
+    """Format float into European currency format: $1.850.519,15 USD"""
+    formatted = f"{value:,.2f}"
+    formatted = formatted.replace(",", "TEMP").replace(".", ",").replace("TEMP", ".")
+    return f"${formatted} USD"
+
+
 class InteractiveAWSApp(ctk.CTk):
 
     def __init__(self):
@@ -93,11 +100,10 @@ class InteractiveAWSApp(ctk.CTk):
                 for group in result.get("Groups", []):
                     service_name = group["Keys"][0]
                     amount = float(group["Metrics"]["UnblendedCost"]["Amount"])
-                    unit = group["Metrics"]["UnblendedCost"].get("Unit", "USD")
                     total_cost += amount
-                    service_lines.append(f"- {service_name}: ${amount:.2f} {unit}")
+                    service_lines.append(f"- {service_name}: {format_currency(amount)}")
 
-        total_cost_str = f"${total_cost:.2f} USD" if total_cost > 0 else "N/A"
+        total_cost_str = format_currency(total_cost) if total_cost > 0 else "N/A"
 
         # Parse active security findings dynamically
         sec_count = 0
@@ -131,7 +137,9 @@ class InteractiveAWSApp(ctk.CTk):
             self.card_sec, text="Active Security Findings", font=ctk.CTkFont(size=12)
         ).pack(pady=2)
         ctk.CTkLabel(
-            self.card_sec, text=str(sec_count), font=ctk.CTkFont(size=18, weight="bold")
+            self.card_sec,
+            text=f"{sec_count:,}".replace(",", "."),
+            font=ctk.CTkFont(size=18, weight="bold"),
         ).pack(pady=5)
 
         if service_lines:
@@ -201,18 +209,34 @@ class InteractiveAWSApp(ctk.CTk):
         if not query:
             return
 
-        # Determine wait time estimate based on analytical complexity
-        complex_keywords = ["cut", "save", "saving", "optimize", "optimization", "detail", "reduce", "analyze", "why"]
+        complex_keywords = [
+            "cut",
+            "save",
+            "saving",
+            "optimize",
+            "optimization",
+            "detail",
+            "reduce",
+            "analyze",
+            "why",
+        ]
         is_complex = any(kw in query.lower() for kw in complex_keywords)
-        est_time = "~20–45 seconds for deep analysis" if is_complex else "~5–15 seconds"
+        est_time = (
+            "~20–45 seconds for deep analysis" if is_complex else "~5–15 seconds"
+        )
 
         self.chat_history.insert("end", f"Management: {query}\n\n")
-        self.chat_history.insert("end", f"Ollama AI: Processing precise analysis (Estimated wait time: {est_time})...\n\n")
+        self.chat_history.insert(
+            "end",
+            f"Ollama AI: Processing precise analysis (Estimated wait time: {est_time})...\n\n",
+        )
         self.chat_history.see("end")
         self.entry_prompt.delete(0, "end")
         self.btn_ask.configure(state="disabled")
 
-        threading.Thread(target=self._get_ollama_response, args=(query,), daemon=True).start()
+        threading.Thread(
+            target=self._get_ollama_response, args=(query,), daemon=True
+        ).start()
 
     def _get_ollama_response(self, query):
         cost_data, sec_data, trail_data = self.fetch_aws_metrics()
@@ -220,6 +244,7 @@ class InteractiveAWSApp(ctk.CTk):
         system_context = (
             "You are an AWS Cloud Cost & Infrastructure Management AI Assistant.\n"
             "Use the provided AWS Telemetry Data to accurately answer the user's question.\n"
+            "Format all currency numbers in European format (e.g., $1.234,56 USD using dots for thousands and commas for decimals).\n"
             "If exact data is missing from the metrics, provide standard AWS operational advice.\n"
             "Format your response using clear Markdown (headers, bullet points, bold text).\n\n"
             f"AWS Telemetry Data:\n"
