@@ -195,10 +195,34 @@ Press the `Interactive Q&A` button and start writing tipical management queries 
 
 ![run test](run_test.png)
 
-![execution problem](execution_problem.png)
+![execution problem](images/execution_problem.png)
 
 you can fix it running these commands:
 
-![execution problem resolution](execution_problem_resolution.png)
+![execution problem resolution](images/execution_problem_resolution.png)
 
 After doing this, the program will run again. 
+
+
+# Deliver an executable version
+
+To package main.py into a standalone executable (.exe on Windows or ELF binary on Linux), PyInstaller is the standard tool.
+
+1. Install PyInstaller
+
+Install it inside your project environment using uv:
+
+![uv add pyinstaller](images/uv_add_pyinstaller.png)
+
+(Or via pip: pip install pyinstaller)
+
+2. Build the Executable
+
+Run PyInstaller targeting your main.py file path:
+
+```shell
+uv run python -m PyInstaller --noconsole --onefile --collect-all customtkinter src/finance_analysis/main.py
+```
+
+![build main.exe for windows](images/build_main.exe_for_windows.png)
+
