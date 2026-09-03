@@ -187,3 +187,18 @@ Press the `Interactive Q&A` button and start writing tipical management queries 
 ![third question](images/third_question.png)
 
 ![img.png](images/fourth_question.png)
+
+
+## Trouble-shoot section
+
+* If you find this problem while you run any of the tests ...
+
+![run test](run_test.png)
+
+![execution problem](execution_problem.png)
+
+you can fix it running these commands:
+
+![execution problem resolution](execution_problem_resolution.png)
+
+After doing this, the program will run again. 

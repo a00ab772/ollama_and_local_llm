@@ -6,6 +6,7 @@ __pycache__/
 venv/
 ENV/
 uv.lock
+.python-version
 
 # PyCharm and IDE configurations
 .idea/
