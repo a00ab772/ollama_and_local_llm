@@ -3,10 +3,10 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
+from finance_analysis.main import InteractiveAWSApp
+
 # Add parent directory containing main.py to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
-from main import InteractiveAWSApp
 
 # Locate the resources directory relative to run_interactive_mock.py
 RESOURCES_DIR = Path(__file__).resolve().parent / "resources"

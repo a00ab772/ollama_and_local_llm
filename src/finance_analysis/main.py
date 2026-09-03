@@ -1,6 +1,8 @@
 import datetime
 import re
+import subprocess
 import threading
+import time
 import boto3
 import customtkinter as ctk
 import ollama
@@ -20,6 +22,9 @@ class InteractiveAWSApp(ctk.CTk):
 
     def __init__(self):
         super().__init__()
+
+        # Ensure Ollama daemon is active before rendering UI
+        self._ensure_ollama_running()
 
         self.title("AWS Operations & Security Manager - Executive Portal")
         self.geometry("1100x800")
@@ -54,6 +59,20 @@ class InteractiveAWSApp(ctk.CTk):
 
         # Load view lazily
         self.after(100, self.setup_cost_view)
+
+    def _ensure_ollama_running(self):
+        """Check if Ollama server is responding; if not, execute 'ollama serve'."""
+        try:
+            ollama.list()
+        except Exception:
+            print("Ollama server is not running. Launching 'ollama serve' in background...")
+            subprocess.Popen(
+                ["ollama", "serve"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                creationflags=subprocess.CREATE_NO_WINDOW if hasattr(subprocess, "CREATE_NO_WINDOW") else 0,
+            )
+            time.sleep(2)  # Short pause to allow server binding
 
     def fetch_aws_metrics(self):
         """Fetch live cost, security, and cloudtrail data using boto3."""
