@@ -1,0 +1,868 @@
+{
+  "ResultsByTime": [
+    {
+      "TimePeriod": {
+        "Start": "2026-08-01",
+        "End": "2026-08-31"
+      },
+      "Total": {
+        "UnblendedCost": {
+          "Amount": "18552.61",
+          "Unit": "USD"
+        }
+      },
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "533.06",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "413",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "365.82",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "144",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "509.05",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "149",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "727.08",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "425",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "785.94",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "452",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "201.56",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "448",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "405.38",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "309",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "523.51",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "318",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "514.14",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "483",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Relational Database Service",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:RDS Database Instance Usage"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "543.97",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "173",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "235.37",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "482",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "67.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "298",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Relational Database Service",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:RDS Database Instance Usage"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "139.11",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "187",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "20.22",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "11",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "54.67",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "229",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "470.14",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "97",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Relational Database Service",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:RDS Database Instance Usage"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "742.72",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "311",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "423.25",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "154",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "326.33",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "492",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Relational Database Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:RDS Database Instance Usage"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "670.26",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "226",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "476.30",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "445",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "105.91",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "246",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "400.42",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "94",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "294.03",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "439",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "323.66",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "51",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "712.78",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "114",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "168.84",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "276",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "108.85",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "64",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "458.55",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "155",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "133.70",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "284",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "956.14",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "80",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "209.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "59",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "94.00",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "473",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "489.09",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "109",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "759.76",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "61",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$analytics_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "523.58",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "396",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "139.33",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "53",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "291.03",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "389",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "343.16",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "136",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$devops_team",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "185.40",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "474",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "273.47",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "47",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "529.33",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "251",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "526.66",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "303",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "276.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "202",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$db_admin",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "645.38",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "137",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Lambda",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:Lambda Invocations"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "39.48",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "228",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "42.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "126",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute",
+            "Tag:user:IAMUser$dev_lead",
+            "UsageType:EC2 Running Hours"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "577.96",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "399",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "66.10",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "382",
+              "Unit": "Hours/Requests"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service",
+            "Tag:user:IAMUser$intern_app",
+            "UsageType:S3 Storage & Data Transfer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "141.76",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "413",
+              "Unit": "Hours/Requests"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

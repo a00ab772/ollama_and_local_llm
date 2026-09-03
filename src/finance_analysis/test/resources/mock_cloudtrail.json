@@ -1,0 +1,854 @@
+{
+  "Events": [
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 08:00:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "21.35",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1000"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 08:05:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "42.77",
+      "Resources": [
+        {
+          "ResourceName": "sg-1001"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 08:10:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "118.67",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1002"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 08:15:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "29.34",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1003"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 08:20:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "15.41",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1004"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 08:25:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "116.73",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1005"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 08:30:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "193.31",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1006"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 08:35:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "56.28",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1007"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 08:40:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "46.74",
+      "Resources": [
+        {
+          "ResourceName": "sg-1008"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 08:45:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "158.97",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1009"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 08:50:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "8.15",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1010"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 08:55:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "26.20",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1011"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 09:00:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "156.64",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1012"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 09:05:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "149.77",
+      "Resources": [
+        {
+          "ResourceName": "sg-1013"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 09:10:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "194.66",
+      "Resources": [
+        {
+          "ResourceName": "sg-1014"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 09:15:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "10.07",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1015"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 09:20:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "30.36",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1016"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 09:25:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "107.03",
+      "Resources": [
+        {
+          "ResourceName": "sg-1017"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 09:30:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "144.50",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1018"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 09:35:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "86.41",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1019"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 09:40:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "76.97",
+      "Resources": [
+        {
+          "ResourceName": "sg-1020"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 09:45:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "49.58",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1021"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 09:50:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "94.10",
+      "Resources": [
+        {
+          "ResourceName": "sg-1022"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 09:55:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "65.53",
+      "Resources": [
+        {
+          "ResourceName": "sg-1023"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 10:00:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "76.70",
+      "Resources": [
+        {
+          "ResourceName": "sg-1024"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 10:05:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "27.95",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1025"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 10:10:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "47.12",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1026"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 10:15:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "97.62",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1027"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 10:20:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "16.06",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1028"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 10:25:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "78.76",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1029"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 10:30:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "54.59",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1030"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 10:35:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "14.79",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1031"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 10:40:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "88.55",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1032"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 10:45:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "27.84",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1033"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 10:50:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "41.14",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1034"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 10:55:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "55.54",
+      "Resources": [
+        {
+          "ResourceName": "sg-1035"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 11:00:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "66.74",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1036"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 11:05:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "107.11",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1037"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 11:10:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "84.82",
+      "Resources": [
+        {
+          "ResourceName": "sg-1038"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 11:15:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "100.76",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1039"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 11:20:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "14.64",
+      "Resources": [
+        {
+          "ResourceName": "sg-1040"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 11:25:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "59.93",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1041"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "CreateAccessKey",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 11:30:00",
+      "EventSource": "iam.amazonaws.com",
+      "DirectCostImpactUSD": "39.51",
+      "Resources": [
+        {
+          "ResourceName": "AKIAIOSFODNN7EXAMPLE1042"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 11:35:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "71.85",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1043"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "db_admin",
+      "EventTime": "2026-08-01 11:40:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "116.63",
+      "Resources": [
+        {
+          "ResourceName": "sg-1044"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "db_admin",
+        "Arn": "arn:aws:iam::123456789012:user/db_admin"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "analytics_team",
+      "EventTime": "2026-08-01 11:45:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "34.95",
+      "Resources": [
+        {
+          "ResourceName": "sg-1045"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "analytics_team",
+        "Arn": "arn:aws:iam::123456789012:user/analytics_team"
+      }
+    },
+    {
+      "EventName": "PutBucketPolicy",
+      "Username": "dev_lead",
+      "EventTime": "2026-08-01 11:50:00",
+      "EventSource": "s3.amazonaws.com",
+      "DirectCostImpactUSD": "11.47",
+      "Resources": [
+        {
+          "ResourceName": "company-data-bucket-1046"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "dev_lead",
+        "Arn": "arn:aws:iam::123456789012:user/dev_lead"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 11:55:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "3.63",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1047"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    },
+    {
+      "EventName": "RunInstances",
+      "Username": "devops_team",
+      "EventTime": "2026-08-01 12:00:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "84.54",
+      "Resources": [
+        {
+          "ResourceName": "i-0a1b2c3d4e5f1048"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "devops_team",
+        "Arn": "arn:aws:iam::123456789012:user/devops_team"
+      }
+    },
+    {
+      "EventName": "AuthorizeSecurityGroupIngress",
+      "Username": "intern_app",
+      "EventTime": "2026-08-01 12:05:00",
+      "EventSource": "ec2.amazonaws.com",
+      "DirectCostImpactUSD": "10.61",
+      "Resources": [
+        {
+          "ResourceName": "sg-1049"
+        }
+      ],
+      "UserIdentity": {
+        "Type": "IAMUser",
+        "UserName": "intern_app",
+        "Arn": "arn:aws:iam::123456789012:user/intern_app"
+      }
+    }
+  ]
+}
