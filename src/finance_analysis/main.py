@@ -201,8 +201,13 @@ class InteractiveAWSApp(ctk.CTk):
         if not query:
             return
 
+        # Determine wait time estimate based on analytical complexity
+        complex_keywords = ["cut", "save", "saving", "optimize", "optimization", "detail", "reduce", "analyze", "why"]
+        is_complex = any(kw in query.lower() for kw in complex_keywords)
+        est_time = "~20–45 seconds for deep analysis" if is_complex else "~5–15 seconds"
+
         self.chat_history.insert("end", f"Management: {query}\n\n")
-        self.chat_history.insert("end", "Ollama AI: Thinking...\n\n")
+        self.chat_history.insert("end", f"Ollama AI: Processing precise analysis (Estimated wait time: {est_time})...\n\n")
         self.chat_history.see("end")
         self.entry_prompt.delete(0, "end")
         self.btn_ask.configure(state="disabled")
