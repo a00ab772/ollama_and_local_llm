@@ -1,0 +1,654 @@
+{
+  "Findings": [
+    {
+      "Title": "S3 bucket public read access enabled #1",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1000"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #2",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1001"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #3",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1002"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #4",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1003"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #5",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1004"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #6",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1005"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #7",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1006"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #8",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1007"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #9",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1008"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #10",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1009"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #11",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1010"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #12",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1011"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #13",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1012"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #14",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1013"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #15",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1014"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #16",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1015"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #17",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1016"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #18",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1017"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #19",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1018"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #20",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1019"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #21",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1020"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #22",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1021"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #23",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1022"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #24",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1023"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #25",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1024"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #26",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1025"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #27",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1026"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #28",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1027"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #29",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1028"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #30",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1029"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #31",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1030"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #32",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1031"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #33",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1032"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #34",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1033"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #35",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1034"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #36",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1035"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #37",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1036"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #38",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1037"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #39",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1038"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #40",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1039"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #41",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1040"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #42",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1041"
+        }
+      ],
+      "ResponsibleUser": "db_admin",
+      "Description": "Security compliance violation initiated by IAM User: db_admin"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #43",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1042"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #44",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1043"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #45",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1044"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #46",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1045"
+        }
+      ],
+      "ResponsibleUser": "devops_team",
+      "Description": "Security compliance violation initiated by IAM User: devops_team"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #47",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1046"
+        }
+      ],
+      "ResponsibleUser": "analytics_team",
+      "Description": "Security compliance violation initiated by IAM User: analytics_team"
+    },
+    {
+      "Title": "IAM AdministratorAccess policy attached directly #48",
+      "Severity": {
+        "Label": "CRITICAL"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:iam::123456789012:user/1047"
+        }
+      ],
+      "ResponsibleUser": "dev_lead",
+      "Description": "Security compliance violation initiated by IAM User: dev_lead"
+    },
+    {
+      "Title": "Security Group allows unrestricted SSH #49",
+      "Severity": {
+        "Label": "MEDIUM"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:ec2:us-east-1:123456789012:sg-1048"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    },
+    {
+      "Title": "S3 bucket public read access enabled #50",
+      "Severity": {
+        "Label": "HIGH"
+      },
+      "Resources": [
+        {
+          "Id": "arn:aws:s3:::company-data-bucket-1049"
+        }
+      ],
+      "ResponsibleUser": "intern_app",
+      "Description": "Security compliance violation initiated by IAM User: intern_app"
+    }
+  ]
+}

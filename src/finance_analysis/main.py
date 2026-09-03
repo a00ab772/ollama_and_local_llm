@@ -45,7 +45,8 @@ class InteractiveAWSApp(ctk.CTk):
         self.main_frame = ctk.CTkFrame(self, corner_radius=0)
         self.main_frame.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
-        self.setup_cost_view()
+        # Load view lazily
+        self.after(100, self.setup_cost_view)
 
     def fetch_aws_metrics(self):
         """Fetch live cost, security, and cloudtrail data using boto3."""
@@ -81,7 +82,7 @@ class InteractiveAWSApp(ctk.CTk):
         for widget in self.main_frame.winfo_children():
             widget.destroy()
 
-        cost_data, sec_data, _ = self.fetch_aws_metrics()
+        cost_data, sec_data, err = self.fetch_aws_metrics()
 
         # Parse costs dynamically
         total_cost = 0.0
@@ -133,7 +134,13 @@ class InteractiveAWSApp(ctk.CTk):
             self.card_sec, text=str(sec_count), font=ctk.CTkFont(size=18, weight="bold")
         ).pack(pady=5)
 
-        summary_body = "\n".join(service_lines) if service_lines else "No cost metrics available."
+        if service_lines:
+            summary_body = "\n".join(service_lines)
+        elif err:
+            summary_body = f"AWS Fetch Error: {err}"
+        else:
+            summary_body = "No cost metrics available."
+
         summary_text = (
             f"Executive Summary:\n\n{summary_body}\n\n"
             "Switch to 'Interactive Q&A' to ask about user attribution or specific expenses."
@@ -157,7 +164,6 @@ class InteractiveAWSApp(ctk.CTk):
         self.chat_history = ctk.CTkTextbox(self.main_frame)
         self.chat_history.pack(padx=20, pady=10, fill="both", expand=True)
 
-        # Configure Tkinter tags to properly format Markdown elements in CTkTextbox
         self.chat_history._textbox.tag_config(
             "bold", font=("Segoe UI", 12, "bold")
         )
@@ -201,7 +207,6 @@ class InteractiveAWSApp(ctk.CTk):
         self.entry_prompt.delete(0, "end")
         self.btn_ask.configure(state="disabled")
 
-        # Run Ollama call asynchronously so the UI does not freeze
         threading.Thread(target=self._get_ollama_response, args=(query,), daemon=True).start()
 
     def _get_ollama_response(self, query):
@@ -228,7 +233,6 @@ class InteractiveAWSApp(ctk.CTk):
         self.after(0, self._update_chat_ui, response_text)
 
     def _update_chat_ui(self, response_text):
-        # Remove 'Thinking...' placeholder line and render formatted response
         self.chat_history.delete("end - 3 lines", "end")
         self.chat_history.insert("end", "Ollama AI:\n")
         self._append_formatted_markdown(response_text)
@@ -237,7 +241,6 @@ class InteractiveAWSApp(ctk.CTk):
         self.btn_ask.configure(state="normal")
 
     def _append_formatted_markdown(self, text):
-        """Parse raw markdown strings into visual CTkTextbox tags."""
         lines = text.split("\n")
         in_code_block = False
 
@@ -250,13 +253,11 @@ class InteractiveAWSApp(ctk.CTk):
                 self.chat_history.insert("end", f"  {line}\n", "code")
                 continue
 
-            # Handle headers (# Header)
             if line.startswith("#"):
                 clean_line = re.sub(r"^#+\s*", "", line)
                 self.chat_history.insert("end", clean_line + "\n", "header")
                 continue
 
-            # Parse inline markdown elements (**bold** and `code`)
             tokens = re.split(r"(\*\*.*?\*\*|`.*?`)", line)
             for token in tokens:
                 if token.startswith("**") and token.endswith("**"):

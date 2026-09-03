@@ -167,193 +167,23 @@ Installed 14 packages in 662ms
  + xmltodict==1.0.4
 ```
 
+* Generate mocked cloudtrail, cost and security events:
 
-* Running the `run_interactive_mock.py`
-
-
-![run interactive mock configuration](images/run_interactive_mock_configuration.png)
-
-![run interactive mock execution](images/run_interactive_mock_execution.png)
+![img.png](images/generate_mocked_inputs.png)
 
 
-Sequence that you can use to test the same from your laptop:
+* Ask questions to the AWS Assistant using the mocked values that you have generated. Here is the overall cost incurred in AWS services:
 
+![run interactive mock configuration](images/run_interactive_mock_overall_report.png)
 
+Press the `Interactive Q&A` button and start writing tipical management queries about the AWS infrastructure:
 
-    Welcome! Ask any live question regarding costs, users, or infrastructure.
-    
-    
-    Management: who did the biggest expense in latest month?
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, the biggest expense in the latest month (August 2026) is attributed to the 'Amazon EC2' resource, specifically for the 'dev_lead' owner.
-    
-    The total unblended cost for the month of August is $239.60, with $142.50 of that cost being attributed to the 'Amazon EC2' resource for the 'dev_lead' owner.
-    
-    
-    Management: which services did he run to do so big cost?
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, I can help you identify the services that contributed to the high cost.
-    
-    According to the Cost Data, the top services that incurred costs are:
-    
-    1. **Amazon EC2**: With a cost of $142.50, this is the largest contributor to the total cost.
-       2. **Amazon RDS**: With a cost of $85.00, this is the second-largest contributor to the total cost.
-       3. **Amazon S3**: With a cost of $12.10, this is the third-largest contributor to the total cost.
-    
-    These costs are broken down by the `Keys` attribute in the `Groups` section of the Cost Data. The `Keys` attribute indicates the specific service (e.g., `Amazon EC2`) and any associated tags (e.g., `Tag:Owner$dev_lead`).
-    
-    To further optimize costs, I recommend reviewing the usage of these services and considering the following standard AWS operational advice:
-    
-    * Review EC2 instance types and consider downsizing or optimizing instance types to reduce costs.
-      * Review RDS instance types and consider downsizing or optimizing instance types to reduce costs.
-      * Review S3 bucket permissions and ensure that public read access is disabled to reduce potential security risks.
-    
-    Additionally, you may want to explore using AWS Cost Explorer to gain more insights into your cost trends and identify areas for cost optimization.
-    
-    
-    Management: give me the aws cli commands to do so
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, I'll provide the AWS CLI commands to address the user's questions.
-    
-    **1. Identify the total cost for the given time period**
-    
-    To get the total cost for the given time period (August 1-31, 2026), you can use the following AWS CLI command:
-    ```bash
-    aws cost-explorer get-cost-and-usage --time-period Start='2026-08-01',End='2026-08-31'
-    ```
-    This will return the total cost for the specified time period.
-    
-    **2. Get the cost breakdown by service and tag**
-    
-    To get the cost breakdown by service and tag, you can use the following AWS CLI command:
-    ```bash
-    aws cost-explorer get-cost-and-usage --time-period Start='2026-08-01',End='2026-08-31' --granularity DAILY --group-by Type=DAILY,GroupByKeys=SERVICE,GroupByValues=SERVICE,GroupByTagKeys=TAG:Owner,GroupByTagValues=TAG:Owner$dev_lead
-    ```
-    This will return the cost breakdown by service and tag for the specified time period.
-    
-    **3. Remediate S3 bucket public read access**
-    
-    To remediate the S3 bucket public read access, you can use the following AWS CLI command:
-    ```bash
-    aws s3api put-bucket-policy --bucket company-confidential-bucket --policy file://remediation-policy.json
-    ```
-    Create a remediation policy file (`remediation-policy.json`) with the following content:
-    ```json
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "DenyPublicReadAccess",
-          "Effect": "Deny",
-          "Principal": "*",
-          "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::company-confidential-bucket/*"
-        }
-      ]
-    }
-    ```
-    This will deny public read access to the S3 bucket.
-    
-    **4. Verify the EC2 instance creation**
-    
-    To verify the EC2 instance creation, you can use the following AWS CLI command:
-    ```bash
-    aws ec2 describe-instances --instance-ids i-0a1b2c3d4e5f6g7h8
-    ```
-    This will return information about the EC2 instance, including its status and configuration.
-    
-    
-    Welcome! Ask any live question regarding costs, users, or infrastructure.
-    
-    
-    Management: who did the biggest expense in latest month?
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, the biggest expense in the latest month (August 2026) is attributed to the 'Amazon EC2' resource, specifically for the 'dev_lead' owner.
-    
-    The total unblended cost for the month of August is $239.60, with $142.50 of that cost being attributed to the 'Amazon EC2' resource for the 'dev_lead' owner.
-    
-    
-    Management: which services did he run to do so big cost?
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, I can help you identify the services that contributed to the high cost.
-    
-    According to the Cost Data, the top services that incurred costs are:
-    
-    1. **Amazon EC2**: With a cost of $142.50, this is the largest contributor to the total cost.
-       2. **Amazon RDS**: With a cost of $85.00, this is the second-largest contributor to the total cost.
-       3. **Amazon S3**: With a cost of $12.10, this is the third-largest contributor to the total cost.
-    
-    These costs are broken down by the `Keys` attribute in the `Groups` section of the Cost Data. The `Keys` attribute indicates the specific service (e.g., `Amazon EC2`) and any associated tags (e.g., `Tag:Owner$dev_lead`).
-    
-    To further optimize costs, I recommend reviewing the usage of these services and considering the following standard AWS operational advice:
-    
-    * Review EC2 instance types and consider downsizing or optimizing instance types to reduce costs.
-      * Review RDS instance types and consider downsizing or optimizing instance types to reduce costs.
-      * Review S3 bucket permissions and ensure that public read access is disabled to reduce potential security risks.
-    
-    Additionally, you may want to explore using AWS Cost Explorer to gain more insights into your cost trends and identify areas for cost optimization.
-    
-    
-    Management: give me the aws cli commands to do so
-    
-    Ollama AI:
-    Based on the provided AWS Telemetry Data, I'll provide the AWS CLI commands to address the user's questions.
-    
-    **1. Identify the total cost for the given time period**
-    
-    To get the total cost for the given time period (August 1-31, 2026), you can use the following AWS CLI command:
-    ```bash
-    aws cost-explorer get-cost-and-usage --time-period Start='2026-08-01',End='2026-08-31'
-    ```
-    This will return the total cost for the specified time period.
-    
-    **2. Get the cost breakdown by service and tag**
-    
-    To get the cost breakdown by service and tag, you can use the following AWS CLI command:
-    ```bash
-    aws cost-explorer get-cost-and-usage --time-period Start='2026-08-01',End='2026-08-31' --granularity DAILY --group-by Type=DAILY,GroupByKeys=SERVICE,GroupByValues=SERVICE,GroupByTagKeys=TAG:Owner,GroupByTagValues=TAG:Owner$dev_lead
-    ```
-    This will return the cost breakdown by service and tag for the specified time period.
-    
-    **3. Remediate S3 bucket public read access**
-    
-    To remediate the S3 bucket public read access, you can use the following AWS CLI command:
-    ```bash
-    aws s3api put-bucket-policy --bucket company-confidential-bucket --policy file://remediation-policy.json
-    ```
-    Create a remediation policy file (`remediation-policy.json`) with the following content:
-    ```json
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "DenyPublicReadAccess",
-          "Effect": "Deny",
-          "Principal": "*",
-          "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::company-confidential-bucket/*"
-        }
-      ]
-    }
-    ```
-    This will deny public read access to the S3 bucket.
-    
-    **4. Verify the EC2 instance creation**
-    
-    To verify the EC2 instance creation, you can use the following AWS CLI command:
-    ```bash
-    aws ec2 describe-instances --instance-ids i-0a1b2c3d4e5f6g7h8
-    ```
-    This will return information about the EC2 instance, including its status and configuration.
-    
+![first question](images/first_question.png)
 
-* Asking different questions about security issues
+![answer to the first question](images/answer_to_the_first_question.png)
+    
+![second question](images/second_question.png)
 
-![security issue findings](images/security_issue_findings.png)
+![third question](images/third_question.png)
 
-![img.png](images/security_issue_findings_01.png)
+![img.png](images/fourth_question.png)
