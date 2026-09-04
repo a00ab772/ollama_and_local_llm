@@ -56,10 +56,10 @@ time=2026-09-01T14:22:48.802+02:00 level=INFO source=routes.go:2040 msg="vram-ba
 
 ```
 
-* Pull the `llama3.1` model:
+* Pull the `llama3.3` model:
 
 ```shell
-(ollama_and_local_llm) PS C:\Users\user\Documents\PycharmProjects\ollama_and_local_llm> ollama pull llama3.1
+(ollama_and_local_llm) PS C:\Users\user\Documents\PycharmProjects\ollama_and_local_llm> ollama pull llama3.3
 pulling manifest 
 pulling 667b0c1932bc: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏ 4.9 GB                         
 pulling 948af2743fc7: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏ 1.5 KB                         
@@ -101,7 +101,7 @@ A web page is spinned up:
 ![LLM embeded in streamlit web page](images/llm_in_streamlit.png)
 
 
-You can interact with the local `llama3.1` llm model:
+You can interact with the local `llama3.3` llm model:
 
 ![img.png](images/interact_with_the_llm.png)
 
@@ -113,7 +113,7 @@ You can interact with the local `llama3.1` llm model:
 ```shell
 C:\Users\user>ollama list
 NAME               ID              SIZE      MODIFIED
-llama3.1:latest    46e0c10c039e    4.9 GB    11 minutes ago
+llama3.3:latest    46e0c10c039e    4.9 GB    11 minutes ago
 ```
 
 My overall satisfaction about the Udemy trainings so far is poor, but probably I need to take more.

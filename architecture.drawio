@@ -55,7 +55,7 @@
         </mxCell>
 
         <!-- Ollama AI -->
-        <mxCell id="ollama" value="Ollama AI&#10;(llama3.1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="ollama" value="Ollama AI&#10;(llama3.3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="710" y="220" width="110" height="60" as="geometry" />
         </mxCell>
 
