@@ -274,7 +274,7 @@ class InteractiveAWSApp(ctk.CTk):
         )
 
         try:
-            res = ollama.generate(model="llama3.3", prompt=system_context)
+            res = ollama.generate(model="llama3.1", prompt=system_context)
             response_text = res["response"]
         except Exception as err:
             response_text = f"Error connecting to Ollama: {str(err)}"
